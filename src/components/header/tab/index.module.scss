@@ -1,0 +1,9 @@
+.text {
+    cursor: pointer;
+    transition: 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+.text:hover {
+    border-bottom: 2px solid black;
+}
