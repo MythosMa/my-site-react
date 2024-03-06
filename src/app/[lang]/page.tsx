@@ -1,6 +1,7 @@
+import { useCounterStore } from "@/app/providers/mobxProvider";
 
 export default function Home() {
-  const { counterStore } = useStores();
+  const counterStore = useCounterStore();
   return (
     <button
       onClick={() => {
