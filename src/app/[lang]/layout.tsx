@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import { languages } from "@/app/i18n/config";
-import { Providers } from "./provider";
+import { NextUIProviders } from "./nextUIProvider";
 import {} from "mobx"
 
 import Header from "@/components/header";
@@ -26,13 +26,13 @@ export default function RootLayout({
   return (
     <html lang={lng}>
       <body>
-        <Providers>
+        <NextUIProviders>
           <div className="flex flex-col min-h-screen">
             <Header lng={lng}></Header>
             <div className="flex-1">{children}</div>
             <Footer></Footer>
           </div>
-        </Providers>
+        </NextUIProviders>
       </body>
     </html>
   );
