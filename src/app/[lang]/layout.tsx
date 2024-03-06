@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import { languages } from "@/app/i18n/config";
-import { NextUIProviders } from "./nextUIProvider";
+import { NextUIProviders } from "@/app/providers/nextUIProvider";
 import {} from "mobx"
 
 import Header from "@/components/header";
