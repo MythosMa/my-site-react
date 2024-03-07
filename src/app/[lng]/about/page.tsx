@@ -1,10 +1,10 @@
 import { useTranslation } from "@/app/i18n";
 
 export default async function About({
-  params: { lang },
+  params: { lng },
 }: {
-  params: { lang: string };
-}) {
-  const { t } = await useTranslation(lang);
+  params: { lng: string };
+}) {lng
+  const { t } = await useTranslation(lng);
   return <div>{t("about")}</div>;
 }

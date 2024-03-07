@@ -1,6 +1,8 @@
 import TabText from "./tab";
 import Link from "next/link";
 
+import LanguageSwitcher from "@/components/languageSwitcher";
+
 export default function Header({ lng }: { lng: string }) {
   return (
     <div className="flex flex-row items-center justify-center w-full h-[10vh]">
@@ -15,7 +17,9 @@ export default function Header({ lng }: { lng: string }) {
         </Link>
       </div>
       <div className="w-4/6  flex items-center justify-end">
-        <div className="w-1/5">123123123</div>
+        <div className="w-1/5  flex items-center justify-center">
+          <LanguageSwitcher lng={lng} />
+        </div>
       </div>
     </div>
   );

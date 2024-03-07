@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import "@/app/globals.css";
 import { languages } from "@/app/i18n/config";
 import { NextUIProviders } from "@/app/providers/nextUIProvider";
-import { RootStoreProvider } from "@/app/providers/mobxProvider";
-import {} from "mobx";
+import { MobxProviders } from "@/app/providers/mobxProvider";
 
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -19,23 +18,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: { lng },
+  params,
 }: Readonly<{
   children: React.ReactNode;
   params: Record<string, string>;
 }>) {
   return (
-    <html lang={lng}>
+    <html lang={params.lng}>
       <body>
-        <RootStoreProvider>
+        <MobxProviders>
           <NextUIProviders>
             <div className="flex flex-col min-h-screen">
-              <Header lng={lng}></Header>
+              <Header lng={params.lng}></Header>
               <div className="flex-1">{children}</div>
               <Footer></Footer>
             </div>
           </NextUIProviders>
-        </RootStoreProvider>
+        </MobxProviders>
       </body>
     </html>
   );
