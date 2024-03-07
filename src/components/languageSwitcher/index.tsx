@@ -38,7 +38,7 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <div className="flex items-center">
+        <div className="flex items-center cursor-pointer">
           <GlobeAltIcon className="w-4 h-4" />
           <div className="ml-2">{t(lng)}</div>
         </div>

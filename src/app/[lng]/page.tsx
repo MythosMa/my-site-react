@@ -1,19 +1,13 @@
-"use client";
-
-import { observer } from "mobx-react-lite";
-import { useStores } from "@/stores/index";
-
-const Home = observer(() => {
-  const { counterStore } = useStores();
+const Home = () => {
   return (
-    <button
-      onClick={() => {
-        counterStore.increment();
-      }}
-    >
-      {counterStore.count}
-    </button>
+    <div className="flex flex-col w-full">
+      <div className="px-8">1111</div>
+      <div>1111</div>
+      <div>1111</div>
+      <div>1111</div>
+      <div>1111</div>
+    </div>
   );
-});
+};
 
 export default Home;
