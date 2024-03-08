@@ -1,17 +1,13 @@
-const Home = () => {
+import { useTranslation } from "@/app/i18n";
+
+const Home = async ({ params: { lng } }: { params: { lng: string } }) => {
+  const { t } = await useTranslation(lng, "home");
   return (
-    <div className="flex flex-col w-full">
-      <div className="px-8 w-full flex flex-row bg-red-500">
-        <div className="w-2/3 h-full flex flex-col bg-blue-500">
-          <div className="w-full h-1/2 bg-yellow-500">123123</div>
-          <div className="w-full h-1/2 bg-gray-500">123123</div>
-        </div>
-        <div className="w-1/3 h-full bg-green-500">123123</div>
+    <div className="pl-[5%] pr-[20%] pt-[2%] flex flex-col w-full h-full">
+      <div className="text-[18px] text-[#cccccc]">{t("welcome")}</div>
+      <div className="mt-6 text-[36px] text-[#ffffff] font-extrabold">
+        {t("content")}
       </div>
-      <div>1111</div>
-      <div>1111</div>
-      <div>1111</div>
-      <div>1111</div>
     </div>
   );
 };

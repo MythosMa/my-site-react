@@ -2,25 +2,79 @@ import { useTranslation } from "@/app/i18n";
 
 import Link from "next/link";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-[10vh] text-[#c0c0c0] ">
-      <div className="mb-4 w-full flex flex-row items-center justify-center">
-        <div className="w-1/6 text-center hover:text-[#000000]">
-          <Link href="https://github.com/MythosMa">GITHUB</Link>
-        </div>
-        <div className="w-1/6 text-center hover:text-[#000000]">
-          <Link href="https://www.cnblogs.com/mythosma-web/">CNBLOG-FRONTEND</Link>
-        </div>
-        <div className="w-1/6 text-center hover:text-[#000000]">
-          <Link href="https://www.cnblogs.com/mythosma/">CNBLOG-GAME</Link>
-        </div>
+    <div className="flex flex-row items-center w-full h-[10vh]">
+      <div className="w-5/6 flex flex-row items-center font-extrabold">
+        <Link href="https://github.com/MythosMa">
+          <div className="flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
+            <div className="w-6 h-6">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                <path
+                  fill="currentColor"
+                  d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5C64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9c26.4 39.1 77.9 32.5 104 26c5.7-23.5 17.9-44.5 34.7-60.8c-140.6-25.2-199.2-111-199.2-213c0-49.5 16.3-95 48.3-131.7c-20.4-60.5 1.9-112.3 4.9-120c58.1-5.2 118.5 41.6 123.2 45.3c33-8.9 70.7-13.6 112.9-13.6c42.4 0 80.2 4.9 113.5 13.9c11.3-8.6 67.3-48.8 121.3-43.9c2.9 7.7 24.7 58.3 5.5 118c32.4 36.8 48.9 82.7 48.9 132.3c0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9c177.1-59.7 304.6-227 304.6-424.1c0-247.2-200.4-447.3-447.5-447.3z"
+                />
+              </svg>
+            </div>
+            <div className="ml-2">GITHUB</div>
+          </div>
+        </Link>
+        <Link href="https://www.cnblogs.com/mythosma-web/">
+          <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
+            <div className="w-5 h-5">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                viewBox="0 0 256 256"
+                enable-background="new 0 0 256 256"
+              >
+                <g>
+                  <g>
+                    <path
+                      fill="currentColor"
+                      d="M128,10C62.8,10,10,62.8,10,128c0,65.2,52.8,118,118,118c65.2,0,118-52.8,118-118C246,62.8,193.2,10,128,10z M62.7,202.7c-14.5,0-26.4-11.8-26.4-26.4c0-14.5,11.8-26.4,26.4-26.4c14.6,0,26.4,11.8,26.4,26.4C89.1,190.9,77.3,202.7,62.7,202.7z M159.6,182c-0.1,1.3-0.3,2.6-0.5,3.9c-1.7,7-7.8,12.2-15.3,12.2c-8.8,0-15.9-7.9-15.9-16.6c0-1.3,0.2-2.6,0.5-3.9c-0.4-30.2-24-54.8-53.8-56.9l-1.5-0.2c-0.1,0-0.1,0-0.2,0c-1.3,0-2.5-0.2-3.7-0.5c-6.4-2-11.1-7.9-11.1-15c0-8.7,7-15.7,15.6-15.7c0.1,0,0.1,0,0.2,0h0c47.4,0.5,85.7,39.1,85.7,86.6c0,1.8-0.1,3.5-0.2,5.3C159.6,181.5,159.6,181.8,159.6,182z M218.2,167.4c-2.5,10.4-5.9,24-17.1,24c-13.1,0-11.1-15.2-11.1-28.3c0-2,0.3-3.9,0.8-5.8c-0.6-45.2-39.1-89.4-83.7-92.5l-8.3-1.3C89.1,61.8,73,62.7,73,52.1c0-13,11.6-18.9,24.4-18.9c0.1,0,0.2,0,0.3,0c0,0,0,0,0,0c70.9,0.7,121.3,48.1,121.3,119.2c0,2.6-0.1,5.3-0.3,7.9c0,0.4,0.1,0.8,0.1,1.3C218.7,163.5,218.5,165.5,218.2,167.4z"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div className="ml-2">CNBLOG-FRONTEND</div>
+          </div>
+        </Link>
+        <Link href="https://www.cnblogs.com/mythosma-web/">
+          <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
+            <div className="w-5 h-5">
+              <svg
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                x="0px"
+                y="0px"
+                viewBox="0 0 256 256"
+                enable-background="new 0 0 256 256"
+              >
+                <g>
+                  <g>
+                    <path
+                      fill="currentColor"
+                      d="M128,10C62.8,10,10,62.8,10,128c0,65.2,52.8,118,118,118c65.2,0,118-52.8,118-118C246,62.8,193.2,10,128,10z M62.7,202.7c-14.5,0-26.4-11.8-26.4-26.4c0-14.5,11.8-26.4,26.4-26.4c14.6,0,26.4,11.8,26.4,26.4C89.1,190.9,77.3,202.7,62.7,202.7z M159.6,182c-0.1,1.3-0.3,2.6-0.5,3.9c-1.7,7-7.8,12.2-15.3,12.2c-8.8,0-15.9-7.9-15.9-16.6c0-1.3,0.2-2.6,0.5-3.9c-0.4-30.2-24-54.8-53.8-56.9l-1.5-0.2c-0.1,0-0.1,0-0.2,0c-1.3,0-2.5-0.2-3.7-0.5c-6.4-2-11.1-7.9-11.1-15c0-8.7,7-15.7,15.6-15.7c0.1,0,0.1,0,0.2,0h0c47.4,0.5,85.7,39.1,85.7,86.6c0,1.8-0.1,3.5-0.2,5.3C159.6,181.5,159.6,181.8,159.6,182z M218.2,167.4c-2.5,10.4-5.9,24-17.1,24c-13.1,0-11.1-15.2-11.1-28.3c0-2,0.3-3.9,0.8-5.8c-0.6-45.2-39.1-89.4-83.7-92.5l-8.3-1.3C89.1,61.8,73,62.7,73,52.1c0-13,11.6-18.9,24.4-18.9c0.1,0,0.2,0,0.3,0c0,0,0,0,0,0c70.9,0.7,121.3,48.1,121.3,119.2c0,2.6-0.1,5.3-0.3,7.9c0,0.4,0.1,0.8,0.1,1.3C218.7,163.5,218.5,165.5,218.2,167.4z"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div className="ml-2">CNBLOG-GAME</div>
+          </div>
+        </Link>
       </div>
-      <div className="flex items-center justify-cente hover:text-[#000000]">
+      <div className="w-1/6 flex items-center justify-end text-[#686868]  hover:text-[#ffffff]">
         <Link href="https://beian.miit.gov.cn">
           备案号：湘ICP备2023009573号-1
         </Link>
       </div>
     </div>
   );
-}
+};
+
+export default Footer;

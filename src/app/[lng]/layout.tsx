@@ -7,6 +7,8 @@ import { MobxProviders } from "@/app/providers/mobxProvider";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
+import styles from "./index.module.scss";
+
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
@@ -28,10 +30,25 @@ export default function RootLayout({
       <body>
         <MobxProviders>
           <NextUIProviders>
-            <div className="flex flex-col min-h-screen">
-              <Header lng={params.lng}></Header>
-              <div className="flex-1 p-8">{children}</div>
-              <Footer></Footer>
+            <div
+              className={[
+                styles["page-background"],
+                "p-[4%] h-[100vh] overflow-hidden",
+              ].join(" ")}
+            >
+              <div className={[styles["main-card-background"]].join(" ")}>
+                <div className={[styles["main-card-light"]].join(" ")} />
+                <div
+                  className={[
+                    styles["main-card-container"],
+                    "flex flex-col px-10",
+                  ].join(" ")}
+                >
+                  <Header lng={params.lng}></Header>
+                  <div className="flex-1">{children}</div>
+                  <Footer></Footer>
+                </div>
+              </div>
             </div>
           </NextUIProviders>
         </MobxProviders>

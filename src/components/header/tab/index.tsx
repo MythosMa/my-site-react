@@ -1,9 +1,21 @@
 import styles from "./index.module.scss";
 
-export default function TabText(props: { text: string; className?: string }) {
+export default function TabText(props: {
+  text: string;
+  isCurrent?: boolean;
+  className?: string;
+}) {
+  const { isCurrent = false, text, className } = props;
   return (
-    <div className={[props.className, styles.text, "w-fit"].join(" ")}>
-      {props.text}
+    <div
+      className={[
+        className,
+        styles.text,
+        isCurrent ? "text-white" : "text-gray-500",
+        "text-[16px] w-fit",
+      ].join(" ")}
+    >
+      {text}
     </div>
   );
 }
