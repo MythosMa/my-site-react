@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="ml-2">CNBLOG-FRONTEND</div>
           </div>
         </Link>
-        <Link href="https://www.cnblogs.com/mythosma-web/">
+        <Link href="https://www.cnblogs.com/mythosma/">
           <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
             <div className="w-5 h-5">
               <svg
