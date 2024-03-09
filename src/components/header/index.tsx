@@ -54,6 +54,14 @@ const Header = ({ lng }: { lng: string }) => {
             </Link>
           </div>
           <div className={["ml-10"].join(" ")}>
+            <Link href="/work">
+              <TabText
+                isCurrent={currentPage === "work"}
+                text={t("work")}
+              />
+            </Link>
+          </div>
+          <div className={["ml-10"].join(" ")}>
             <Link href="/about">
               <TabText isCurrent={currentPage === "about"} text={t("about")} />
             </Link>
