@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="flex flex-row items-center w-full h-[10vh]">
-      <div className="w-5/6 flex flex-row items-center font-extrabold">
+    <div className="flex flex-row items-center justify-between w-full h-[10vh]">
+      <div className="flex flex-row items-center font-extrabold">
         <Link href="https://github.com/MythosMa">
           <div className="flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
             <div className="w-6 h-6">
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
         </Link>
       </div>
-      <div className="w-1/6 flex items-center justify-end text-[#686868]  hover:text-[#ffffff]">
+      <div className="flex items-center justify-end text-[#686868]  hover:text-[#ffffff]">
         <Link href="https://beian.miit.gov.cn">
           备案号：湘ICP备2023009573号-1
         </Link>
