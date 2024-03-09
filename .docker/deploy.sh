@@ -8,7 +8,7 @@ yarn build
 cp .docker/Dockerfile ./
 
 docker buildx build \
-   --platform=linux/amd64,linux/arm64/v8 \
+   --platform=linux/amd64 \
    --tag mythosma/my-site:$BUILD_IMG_TAG \
    --push -t mythosma/my-site:$BUILD_IMG_TAG .
 
