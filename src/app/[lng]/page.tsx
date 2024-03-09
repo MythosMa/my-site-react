@@ -11,17 +11,17 @@ const Home = async ({ params: { lng } }: { params: { lng: string } }) => {
       </div>
       <div className="mt-6 flex flex-row items-center text-[#cccccc]">
         <div className="text-[18px] ">{t("buildTip")}</div>
-        <Link href={"/projects/run-game/"}>
+        <Link href={"/projects/run-game/"} target="_blank">
           <div className="ml-4 text-[18px]  hover:text-[#ffffff]">Run Game</div>
         </Link>
         <div className="mx-2 text-[18px] ">|</div>
-        <Link href={"/projects/mess-game/"}>
+        <Link href={"/projects/mess-game/"} target="_blank">
           <div className="ml-4 text-[18px]  hover:text-[#ffffff]">
             Mess Game
           </div>
         </Link>
         <div className="mx-2 text-[18px] ">|</div>
-        <Link href={"/projects/a-star/"}>
+        <Link href={"/projects/a-star/"} target="_blank">
           <div className="ml-4 text-[18px]  hover:text-[#ffffff]">A Star</div>
         </Link>
       </div>

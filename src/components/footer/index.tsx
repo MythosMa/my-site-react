@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="flex flex-row items-center justify-between w-full h-[10vh]">
       <div className="flex flex-row items-center font-extrabold">
-        <Link href="https://github.com/MythosMa">
+        <Link href="https://github.com/MythosMa" target="_blank">
           <div className="flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
             <div className="w-6 h-6">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="ml-2">GITHUB</div>
           </div>
         </Link>
-        <Link href="https://www.cnblogs.com/mythosma-web/">
+        <Link href="https://www.cnblogs.com/mythosma-web/" target="_blank">
           <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
             <div className="w-5 h-5">
               <svg
@@ -43,7 +43,7 @@ const Footer = () => {
             <div className="ml-2">CNBLOG-FRONTEND</div>
           </div>
         </Link>
-        <Link href="https://www.cnblogs.com/mythosma/">
+        <Link href="https://www.cnblogs.com/mythosma/" target="_blank">
           <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
             <div className="w-5 h-5">
               <svg
@@ -69,7 +69,7 @@ const Footer = () => {
         </Link>
       </div>
       <div className="flex items-center justify-end text-[#686868]  hover:text-[#ffffff]">
-        <Link href="https://beian.miit.gov.cn">
+        <Link href="https://beian.miit.gov.cn" target="_blank">
           备案号：湘ICP备2023009573号-1
         </Link>
       </div>
