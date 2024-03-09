@@ -9,6 +9,9 @@ import Footer from "@/components/footer";
 
 import styles from "./index.module.scss";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
