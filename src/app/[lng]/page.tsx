@@ -22,9 +22,7 @@ const Home = async ({ params: { lng } }: { params: { lng: string } }) => {
         </Link>
         <div className="mx-2 text-[18px] ">|</div>
         <Link href={"/projects/a-star/"}>
-          <div className="ml-4 text-[18px]  hover:text-[#ffffff]">
-            Mess Game
-          </div>
+          <div className="ml-4 text-[18px]  hover:text-[#ffffff]">A Star</div>
         </Link>
       </div>
     </div>
