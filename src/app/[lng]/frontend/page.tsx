@@ -3,11 +3,10 @@
 import { useTranslation } from "@/app/i18n/client";
 import Slider from "react-slick";
 
-import TwitterHeart from "./twitter-heart";
 import styled from "styled-components";
 import styles from "./page.module.scss";
 
-import SlicItem from "./components/slick-item";
+import SlickItem from "./components/slick-item";
 import TiwtterHeart from "./twitter-heart";
 import React from "react";
 
@@ -41,9 +40,9 @@ const Frontend = ({ params: { lng } }: { params: { lng: string } }) => {
     },
   ];
 
-  const renderSlickItem = (children: React.ReactNode) => {
+  const renderSlickItem = (key: string, children: React.ReactNode) => {
     return (
-      <div className={"w-full h-full p-4"}>
+      <div key={key} className={"w-full h-full p-4"}>
         <div
           className={[styles["slick-item-container"], "w-full h-full"].join(
             " "
@@ -87,7 +86,8 @@ const Frontend = ({ params: { lng } }: { params: { lng: string } }) => {
             Items.length &&
             Items.map((item, index) => {
               return renderSlickItem(
-                <SlicItem key={`card-` + index} {...item}></SlicItem>
+                `card-` + index,
+                <SlickItem {...item}></SlickItem>
               );
             })}
         </StyledSlider>

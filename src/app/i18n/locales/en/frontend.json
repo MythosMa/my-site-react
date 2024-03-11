@@ -1,0 +1,13 @@
+{
+  "title": "Frontend Code Challenges",
+  "tip": "Here you'll find various frontend page effects. Complete the code to win the challenge!",
+  "twitter-heart": {
+    "title": "Twitter Like Animation",
+    "description": {
+      "1": "How keyframes CSS property works",
+      "2": "How to manipulate and create HTML animation elements",
+      "3": "How to combine JavaScript, HTML, and CSS",
+      "4": "Click on the icon above to see the effect"
+    }
+  }
+}
