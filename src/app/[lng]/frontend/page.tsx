@@ -4,9 +4,56 @@ import { useTranslation } from "@/app/i18n/client";
 import Slider from "react-slick";
 
 import TwitterHeart from "./twitter-heart";
+import styled from "styled-components";
+import styles from "./page.module.scss";
+
+import SlicItem from "./components/slick-item";
+import TiwtterHeart from "./twitter-heart";
+import React from "react";
+
+const StyledSlider = styled(Slider)`
+  .slick-list,
+  .slick-track,
+  .slick-slide,
+  .slick-slide > div {
+    height: 100%;
+  }
+`;
 
 const Frontend = ({ params: { lng } }: { params: { lng: string } }) => {
   const { t } = useTranslation(lng, "frontend");
+
+  const Items: {
+    component: React.ReactNode;
+    content: { title: string; list: string[] };
+  }[] = [
+    {
+      component: <TiwtterHeart size={100} />,
+      content: {
+        title: t("twitter-heart.title"),
+        list: [
+          t("twitter-heart.description.1"),
+          t("twitter-heart.description.2"),
+          t("twitter-heart.description.3"),
+          t("twitter-heart.description.4"),
+        ],
+      },
+    },
+  ];
+
+  const renderSlickItem = (children: React.ReactNode) => {
+    return (
+      <div className={"w-full h-full p-4"}>
+        <div
+          className={[styles["slick-item-container"], "w-full h-full"].join(
+            " "
+          )}
+        >
+          {children}
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div className="p-4 w-full h-full flex flex-col">
@@ -15,21 +62,36 @@ const Frontend = ({ params: { lng } }: { params: { lng: string } }) => {
         <div className="text-[#c8c8c8] text-[14px] font-bold">{t("tip")}</div>
       </div>
       <div className="mt-2 w-full flex-1 text-white">
-        <Slider
+        <StyledSlider
           className="h-full"
-          adaptiveHeight={false}
           infinite={false}
           autoplay={false}
-          slidesToShow={1}
+          responsive={[
+            {
+              breakpoint: 1920,
+              settings: {
+                slidesToShow: 4,
+              },
+            },
+            {
+              breakpoint: 1280,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+          ]}
+          slidesToShow={4}
           slidesToScroll={1}
         >
-          <TwitterHeart lng={lng} />
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-        </Slider>
+          {Items &&
+            Items.length &&
+            Items.map((item, index) => {
+              return renderSlickItem(
+                <SlicItem key={`card-` + index} {...item}></SlicItem>
+              );
+            })}
+        </StyledSlider>
       </div>
-      {/* <TwitterHeart size={10}></TwitterHeart> */}
     </div>
   );
 };

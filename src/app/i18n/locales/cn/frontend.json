@@ -2,6 +2,12 @@
   "title": "前端代码小挑战",
   "tip": "这里包含了各种前端页面的小特效，完成代码，赢得挑战！",
   "twitter-heart": {
-    "title": "Twitter 的点赞特效"
+    "title": "Twitter 的点赞特效",
+    "description": {
+      "1": "keyframes CSS属性如何工作",
+      "2": "如何操作和制作HTML动画元素",
+      "3": "如何结合JavaScript、HTML和CSS",
+      "4": "点击上面的图标查看效果"
+    }
   }
 }
