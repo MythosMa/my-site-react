@@ -36,7 +36,7 @@ export default function RootLayout({
             <div
               className={[
                 styles["page-background"],
-                "p-[4%] h-[100vh] overflow-hidden",
+                "h-[100vh] flex items-center justify-center overflow-hidden",
               ].join(" ")}
             >
               <div className={[styles["main-card-background"]].join(" ")}>

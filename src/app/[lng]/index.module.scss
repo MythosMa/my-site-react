@@ -2,8 +2,10 @@
     background: linear-gradient(to bottom, #020357, #000000);
 
     .main-card-background {
-        width: 100%;
-        height: 100%;
+        width: calc(var(--mainWidth) * 1px);
+        height: calc(var(--mainHeight) * 1px);
+        zoom: var(--mainZoom);
+        object-fit: cover;
         border: 4px solid #6e64ff;
         border-radius: 25px;
         box-shadow: 0 0 20px #ffffff;
