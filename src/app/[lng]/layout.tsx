@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import { languages } from "@/app/i18n/config";
-import { NextUIProviders } from "@/app/providers/nextUIProvider";
+import { AntdProviders } from "@/app/providers/antdProvider";
 import { MobxProviders } from "@/app/providers/mobxProvider";
 
 import Header from "@/components/header";
@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang={params.lng}>
       <body>
         <MobxProviders>
-          <NextUIProviders>
+          <AntdProviders>
             <div
               className={[
                 styles["page-background"],
@@ -53,7 +53,7 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-          </NextUIProviders>
+          </AntdProviders>
         </MobxProviders>
       </body>
     </html>
