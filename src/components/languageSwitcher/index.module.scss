@@ -1,0 +1,11 @@
+.custom-dropdown {
+    :global {
+        .ant-dropdown-menu {
+            background-color: #00000000 !important;
+        }
+
+        .ant-dropdown-menu-title-content {
+            color: white;
+        }
+    }
+}

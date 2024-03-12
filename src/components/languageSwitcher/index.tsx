@@ -6,6 +6,8 @@ import { useTranslation } from "@/app/i18n/client";
 import { languages } from "@/app/i18n/config";
 import { Dropdown, MenuProps } from "antd";
 
+import styles from "./index.module.scss";
+
 export default function LanguageSwitcher({ lng }: { lng: string }) {
   const { t, i18n } = useTranslation(lng, "language");
 
@@ -39,8 +41,10 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
 
   return (
     <Dropdown
+      overlayClassName={styles["custom-dropdown"]}
       menu={{ items: menuItems }}
       getPopupContainer={(node) => node.parentNode as HTMLElement}
+      open={true}
     >
       <div className="flex items-center cursor-pointer">
         <GlobeAltIcon className="w-4 h-4" />
