@@ -1,13 +1,13 @@
 import styles from "./index.module.scss";
 
-const Card = ({
+const SlickItem = ({
   component,
-  content: { title, list },
+  content: { title, descriptionList },
 }: {
   component: React.ReactNode;
   content: {
     title: string;
-    list?: string[];
+    descriptionList?: string[];
   };
 }) => {
   return (
@@ -19,9 +19,9 @@ const Card = ({
       <div className="h-1/2 flex items-center justify-center text-white">
         <div className="flex flex-col">
           <div className="text-[18px] font-bold">{title}</div>
-          {list && list.length && (
+          {descriptionList && descriptionList.length && (
             <ul className="ml-4">
-              {list.map((item) => (
+              {descriptionList.map((item) => (
                 <li className="list-disc">{item}</li>
               ))}
             </ul>
@@ -32,4 +32,4 @@ const Card = ({
   );
 };
 
-export default Card;
+export default SlickItem;

@@ -86,7 +86,7 @@ const Frontend = ({ params: { lng } }: { params: { lng: string } }) => {
             Items.length &&
             Items.map((item, index) => {
               return renderSlickItem(
-                `card-` + index,
+                `slick-item-` + index,
                 <SlickItem {...item}></SlickItem>
               );
             })}

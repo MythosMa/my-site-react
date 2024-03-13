@@ -28,7 +28,7 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
         key: item,
         label: (
           <div
-            className="flex items-center justify-start"
+            className="flex items-center justify-center"
             onClick={() => {
               onSelectChange(item);
             }}
@@ -44,7 +44,6 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
       overlayClassName={styles["custom-dropdown"]}
       menu={{ items: menuItems }}
       getPopupContainer={(node) => node.parentNode as HTMLElement}
-      open={true}
     >
       <div className="flex items-center cursor-pointer">
         <GlobeAltIcon className="w-4 h-4" />
