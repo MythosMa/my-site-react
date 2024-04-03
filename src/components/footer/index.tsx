@@ -68,11 +68,11 @@ const Footer = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center justify-end text-[#686868]  hover:text-[#ffffff]">
+      {/* <div className="flex items-center justify-end text-[#686868]  hover:text-[#ffffff]">
         <Link href="https://beian.miit.gov.cn" target="_blank">
           备案号：湘ICP备2023009573号-1
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
