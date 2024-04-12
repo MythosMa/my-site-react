@@ -1,9 +1,9 @@
-export BUILD_IMG_TAG=1.2.2
+export BUILD_IMG_TAG=1.2.3
 
 sh .docker/check-docker.sh
 
-yarn install
-yarn build
+npm install
+npm run build
 
 cp .docker/Dockerfile ./
 
