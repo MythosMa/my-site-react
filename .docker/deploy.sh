@@ -1,4 +1,4 @@
-export BUILD_IMG_TAG=1.2.4
+export BUILD_IMG_TAG=1.2.5
 
 sh .docker/check-docker.sh
 
