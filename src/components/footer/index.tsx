@@ -1,6 +1,8 @@
 import { useTranslation } from "@/app/i18n";
 
 import Link from "next/link";
+import BeianIcon from "@/assets/beian-icon.png";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -68,10 +70,25 @@ const Footer = () => {
           </div>
         </Link>
       </div>
-      <div className="flex items-center justify-end text-[#686868]  hover:text-[#ffffff]">
-        <Link href="https://beian.miit.gov.cn" target="_blank">
+      <div className="flex items-center justify-end ">
+        <Link
+          className="text-[#686868]  hover:text-[#ffffff]"
+          href="https://beian.miit.gov.cn"
+          target="_blank"
+        >
           备案号：湘ICP备2024058715号-1
         </Link>
+        <div className="ml-4 flex items-center">
+          <Image src={BeianIcon} alt="beian-icon" width={16} height={16} />
+          <Link
+            className="ml-2 text-[#686868]  hover:text-[#ffffff]"
+            href="https://beian.mps.gov.cn/#/query/webSearch?code=43011202001076"
+            rel="noreferrer"
+            target="_blank"
+          >
+            湘公网安备43011202001076
+          </Link>
+        </div>
       </div>
     </div>
   );
