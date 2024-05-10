@@ -22,6 +22,7 @@ export function AntdProviders({ children }: { children: React.ReactNode }) {
 
     document.body.style.setProperty("--mainZoom", `${scale}`);
     document.body.style.setProperty("--mainWidth", `${mainWidth}`);
+    document.body.style.setProperty("--mainDisplay", `${"block"}`);
     // document.body.style.setProperty("--mainHeight", `${mainHeight}`);
   };
   useEffect(() => {
