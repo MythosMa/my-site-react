@@ -9,6 +9,7 @@ import styles from "./page.module.scss";
 import SlickItem from "./components/slick-item";
 import TiwtterHeart from "./twitter-heart";
 import React from "react";
+import LightButton from "./light-button";
 
 const StyledSlider = styled(Slider)`
   .slick-list,
@@ -24,17 +25,35 @@ const Frontend = ({ params: { lng } }: { params: { lng: string } }) => {
 
   const Items: {
     component: React.ReactNode;
-    content: { title: string; list: string[] };
+    content: { title: string; descriptionList: string[] };
   }[] = [
     {
       component: <TiwtterHeart size={100} />,
       content: {
         title: t("twitter-heart.title"),
-        list: [
+        descriptionList: [
           t("twitter-heart.description.1"),
           t("twitter-heart.description.2"),
           t("twitter-heart.description.3"),
           t("twitter-heart.description.4"),
+        ],
+      },
+    },
+    {
+      component: (
+        <LightButton
+          buttonColor={"#0f0f0f"}
+          textColor={"f0f0f0"}
+          lightColor={"#0b34ff"}
+          text={"Test Button"}
+        ></LightButton>
+      ),
+      content: {
+        title: t("light-button.title"),
+        descriptionList: [
+          t("light-button.description.1"),
+          t("light-button.description.2"),
+          t("light-button.description.3"),
         ],
       },
     },

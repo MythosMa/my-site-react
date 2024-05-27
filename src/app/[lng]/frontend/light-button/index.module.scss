@@ -1,0 +1,47 @@
+.custom-button {
+    position: relative;
+    padding: 20px 60px;
+    border-radius: 50px;
+    color: var(--textColor);
+    font-size: 24px;
+    background-color: var(--buttonColor);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    color: var(--lightColor);
+    text-shadow: 0 0 10px var(--lightColor), 0 0 30px var(--lightColor);
+    transition: .2s;
+}
+
+.custom-button::before {
+    content: "";
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(var(--lightColor), transparent, transparent);
+    opacity: 0;
+    transition: 0.2s, top 0s, left 0s;
+}
+
+.custom-button:hover::before {
+    opacity: 1;
+}
+
+.custom-button::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background-color: var(--buttonColor);
+    opacity: 0.9;
+    border-radius: 50px;
+}
+
+.custom-button span {
+    position: relative;
+    z-index: 1; 
+}

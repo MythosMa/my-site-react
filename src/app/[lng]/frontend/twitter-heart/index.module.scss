@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     zoom: var(--zoomRate);
+    cursor: pointer;
     .circle-test {
         transform: translate(0, 0);
         transition: 2s;

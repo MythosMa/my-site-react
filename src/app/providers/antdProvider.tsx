@@ -19,9 +19,11 @@ export function AntdProviders({ children }: { children: React.ReactNode }) {
       clientRatio > designRatio
         ? clientHeight / designHeight
         : clientWidth / designWidth;
+    const rotate = clientRatio > designRatio ? 90 : 0;
 
     document.body.style.setProperty("--mainZoom", `${scale}`);
     document.body.style.setProperty("--mainWidth", `${mainWidth}`);
+    document.body.style.setProperty("--mainRotate", `${rotate}deg`);
     document.body.style.setProperty("--mainDisplay", `${"block"}`);
     // document.body.style.setProperty("--mainHeight", `${mainHeight}`);
   };

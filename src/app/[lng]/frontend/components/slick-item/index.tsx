@@ -21,8 +21,10 @@ const SlickItem = ({
           <div className="text-[18px] font-bold">{title}</div>
           {descriptionList && descriptionList.length && (
             <ul className="ml-4">
-              {descriptionList.map((item) => (
-                <li className="list-disc">{item}</li>
+              {descriptionList.map((item, index) => (
+                <li key={`slick-item-desd-${index}`} className="list-disc">
+                  {item}
+                </li>
               ))}
             </ul>
           )}

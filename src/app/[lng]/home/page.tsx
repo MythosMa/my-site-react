@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const Home = async ({ params: { lng } }: { params: { lng: string } }) => {
   const { t } = await useTranslation(lng, "home");
+
   return (
     <div className="pl-[5%] pr-[20%] pt-[2%] flex flex-col w-full h-full">
       <div className="text-[18px] text-[#cccccc]">{t("welcome")}</div>
@@ -23,6 +24,10 @@ const Home = async ({ params: { lng } }: { params: { lng: string } }) => {
         <div className="mx-2 text-[18px] ">|</div>
         <Link href={"/projects/a-star/"} target="_blank">
           <div className="ml-4 text-[18px]  hover:text-[#ffffff]">A Star</div>
+        </Link>
+        <div className="mx-2 text-[18px] ">|</div>
+        <Link href={"/projects/vue-fabric/tetris/"} target="_blank">
+          <div className="ml-4 text-[18px]  hover:text-[#ffffff]">Tetris</div>
         </Link>
       </div>
     </div>
