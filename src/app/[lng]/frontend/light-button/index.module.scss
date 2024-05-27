@@ -7,12 +7,12 @@
     background-color: var(--buttonColor);
     overflow: hidden;
     cursor: pointer;
+    transition: .2s;
 }
 
 .custom-button:hover {
     color: var(--lightColor);
     text-shadow: 0 0 10px var(--lightColor), 0 0 30px var(--lightColor);
-    transition: .2s;
 }
 
 .custom-button::before {
