@@ -1,0 +1,50 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+
+  @function getShadows($n) {
+    $result: "#{random(100)}vw #{random(100)}vh 0 #fff";
+    @for $i from 2 through $n {
+      $result: "#{$result}, #{random(100)}vw #{random(100)}vh 0 #fff";
+    }
+    @return unquote($result);
+  }
+
+  $duration: 400s;
+  $n: 1000;
+  @for $i from 1 through 5 {
+    $duration: $duration / 2;
+    $n: floor($n / 2);
+    .starLayer#{$i} {
+      $size: #{$i}px;
+      $duration: $duration;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      box-shadow: getShadows($n);
+      animation: moveUp $duration linear infinite;
+
+      &::after {
+        content: "";
+        position: inherit;
+        left: 0;
+        top: 100vh;
+        width: inherit;
+        height: inherit;
+        border-radius: inherit;
+        box-shadow: inherit;
+      }
+    }
+  }
+
+  @keyframes moveUp {
+    to {
+      transform: translateY(-100vh);
+    }
+  }
+}

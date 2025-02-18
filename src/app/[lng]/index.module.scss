@@ -1,59 +1,81 @@
 .page-background {
-    background: linear-gradient(to bottom, #020357, #000000);
+  //   background: linear-gradient(to bottom, #020357, #000000);
 
-    .main-card-background {
-        width: calc(var(--mainWidth) * 1px);
-        // height: calc(var(--mainHeight) * 1px);
-        height: auto;
-        aspect-ratio: 20 / 9;
-        zoom: var(--mainZoom);
-        border: 4px solid #6e64ff;
-        border-radius: 25px;
-        box-shadow: 0 0 20px #ffffff;
-        position: relative;
-        display: var(--mainDisplay);
+  .main-card-background {
+    width: calc(var(--mainWidth) * 1px);
+    // height: calc(var(--mainHeight) * 1px);
+    height: auto;
+    aspect-ratio: 20 / 9;
+    zoom: var(--mainZoom);
+    border: 4px solid #ffffff40;
+    border-radius: 25px;
+    box-shadow: 0 0 20px #ffffff;
+    position: relative;
+    display: var(--mainDisplay);
 
-        .main-card-light {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: radial-gradient(circle at center, #ffffff 0%, rgba(255, 255, 255, 0) 50%);
-            position: absolute;
-            animation: spin 50s linear infinite;
+    .main-card-light-container {
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      position: relative;
+      // overflow: hidden;
+      clip-path: polygon(
+        -20% -20%,
+        120% -20%,
+        120% 0,
+        0 0,
+        0 100%,
+        100% 100%,
+        100% 0,
+        120% 0,
+        120% 120%,
+        0 120%
+      );
+      .main-card-light {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at center,
+          #ffffff 0%,
+          rgba(255, 255, 255, 0) 50%
+        );
+        position: absolute;
+        animation: spin 50s linear infinite;
+      }
+      /* 定义关键帧 */
+      @keyframes spin {
+        0% {
+          top: calc(-100px);
+          left: calc(-100px);
         }
-
-        /* 定义关键帧 */
-        @keyframes spin {
-            0% {
-                top: calc(-100px);
-                left: calc(-100px);
-            }
-            25% {
-                top: calc(-100px);
-                left: calc(100% - 200px);
-            }
-            50% {
-                top: calc(100% - 200px);
-                left: calc(100% - 200px);
-            }
-            75% {
-                top: calc(100% - 200px);
-                left: calc(-100px);
-            }
-            100% {
-                top: calc(-100px);
-                left: calc(-100px);
-            }
+        25% {
+          top: calc(-100px);
+          left: calc(100% - 200px);
         }
-
-        .main-card-container {
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            border-radius: 25px;
-            background: linear-gradient(to bottom, #020357, #000000);
-            position: absolute;
+        50% {
+          top: calc(100% - 200px);
+          left: calc(100% - 200px);
         }
+        75% {
+          top: calc(100% - 200px);
+          left: calc(-100px);
+        }
+        100% {
+          top: calc(-100px);
+          left: calc(-100px);
+        }
+      }
     }
+
+    .main-card-container {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 25px;
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+    }
+  }
 }

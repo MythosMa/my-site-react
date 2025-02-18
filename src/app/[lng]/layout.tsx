@@ -11,6 +11,7 @@ import styles from "./index.module.scss";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import StarBackground from "@/components/starBackground";
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -31,6 +32,7 @@ export default function RootLayout({
   return (
     <html lang={params.lng}>
       <body>
+        <StarBackground />
         <MobxProviders>
           <AntdProviders>
             <div
@@ -40,7 +42,12 @@ export default function RootLayout({
               ].join(" ")}
             >
               <div className={[styles["main-card-background"]].join(" ")}>
-                <div className={[styles["main-card-light"]].join(" ")} />
+                <div
+                  className={[styles["main-card-light-container"]].join(" ")}
+                >
+                  <div className={[styles["main-card-light"]].join(" ")} />
+                </div>
+
                 <div
                   className={[
                     styles["main-card-container"],
