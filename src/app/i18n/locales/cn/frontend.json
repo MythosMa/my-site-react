@@ -11,11 +11,19 @@
     }
   },
   "light-button": {
-    "title":"光效按钮",
+    "title": "光效按钮",
     "description": {
       "1": "CSS 自定义属性",
       "2": "CSS 计算属性",
       "3": "将鼠标移入按钮查看效果"
+    }
+  },
+  "square-loading": {
+    "title": "方块加载动画",
+    "description": {
+      "1": "CSS 动画基础",
+      "2": "纯 CSS 实现加载动画",
+      "3": "鼠标移入动画发生变化"
     }
   }
 }

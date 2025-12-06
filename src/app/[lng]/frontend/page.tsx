@@ -10,6 +10,7 @@ import SlickItem from "./components/slick-item";
 import TiwtterHeart from "./twitter-heart";
 import React from "react";
 import LightButton from "./light-button";
+import SquareLoading from "./square-loading";
 
 const StyledSlider = styled(Slider)`
   .slick-list,
@@ -54,6 +55,17 @@ const Frontend = ({ params: { lng } }: { params: { lng: string } }) => {
           t("light-button.description.1"),
           t("light-button.description.2"),
           t("light-button.description.3"),
+        ],
+      },
+    },
+    {
+      component: <SquareLoading />,
+      content: {
+        title: t("square-loading.title"),
+        descriptionList: [
+          t("square-loading.description.1"),
+          t("square-loading.description.2"),
+          t("square-loading.description.3"),
         ],
       },
     },

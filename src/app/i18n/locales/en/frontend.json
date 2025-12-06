@@ -9,5 +9,21 @@
       "3": "How to combine JavaScript, HTML, and CSS",
       "4": "Click on the icon above to see the effect"
     }
+  },
+  "light-button": {
+    "title": "Light Effect Button",
+    "description": {
+      "1": "CSS Custom Properties",
+      "2": "CSS Calculated Properties",
+      "3": "Hover over the button to see the effect"
+    }
+  },
+  "square-loading": {
+    "title": "Square Loading Animation",
+    "description": {
+      "1": "Basics of CSS Animations",
+      "2": "Implementing loading animations with pure CSS",
+      "3": "Hover to see the animation change"
+    }
   }
 }
