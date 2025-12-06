@@ -9,7 +9,7 @@ export const config = {
   matcher: ["/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js).*)"],
 };
 
-export function middleware(req: any) {
+export function proxy(req: any) {
   if (req.nextUrl.pathname === "/") {
     req.nextUrl.pathname = "/home";
   }

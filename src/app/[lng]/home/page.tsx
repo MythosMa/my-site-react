@@ -3,10 +3,12 @@
 import { getSubWebApi, isSubWebDto } from "@/api/subWeb";
 import { useTranslation } from "@/app/i18n/client";
 import { useRequest } from "@/hooks/useRequest";
+import { Params } from "@/types/common";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, use, Fragment } from "react";
 
-const Home = ({ params: { lng } }: { params: { lng: string } }) => {
+const Home = ({ params }: { params: Params }) => {
+  const { lng } = use(params);
   const { t } = useTranslation(lng, "home");
 
   const isFetch = useRef(false);
@@ -22,14 +24,14 @@ const Home = ({ params: { lng } }: { params: { lng: string } }) => {
   const renderSubWeb = () => {
     return isSubWebDto(data) && data.length ? (
       data.map((item, index) => (
-        <>
+        <Fragment key={item.id}>
           <Link href={item.url} target="_blank">
             <div className="text-[18px]  hover:text-[#ffffff]">{item.name}</div>
           </Link>
           {index < data.length - 1 ? (
             <div className="mx-4 text-[18px] ">|</div>
           ) : null}
-        </>
+        </Fragment>
       ))
     ) : (
       <></>

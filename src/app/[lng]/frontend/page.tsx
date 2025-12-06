@@ -8,9 +8,10 @@ import styles from "./page.module.scss";
 
 import SlickItem from "./components/slick-item";
 import TiwtterHeart from "./twitter-heart";
-import React from "react";
+import React, { use } from "react";
 import LightButton from "./light-button";
 import SquareLoading from "./square-loading";
+import { Params } from "@/types/common";
 
 const StyledSlider = styled(Slider)`
   .slick-list,
@@ -21,7 +22,8 @@ const StyledSlider = styled(Slider)`
   }
 `;
 
-const Frontend = ({ params: { lng } }: { params: { lng: string } }) => {
+const Frontend = ({ params }: { params: Params }) => {
+  const { lng } = use(params);
   const { t } = useTranslation(lng, "frontend");
 
   const Items: {
