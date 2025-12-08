@@ -2,12 +2,18 @@
 
 const nextConfig = {
   output: "standalone",
-  rewrites: async () => {
-    return [{
-      source: `${process.env.NEXT_PUBLIC_BASE_API}/:path*`,
-      destination: `${process.env.NEXT_PUBLIC_BASE_URL}/:path*`
-    }]
-  }
+  async rewrites() {
+    console.log("NEXT_PUBLIC_BASE_URL:", process.env.NEXT_PUBLIC_BASE_URL)
+    if (process.env.NODE_ENV === 'development') {
+      return [
+        {
+          source: '/:lng/dev-api/:path*',
+          destination: process.env.NEXT_PUBLIC_BASE_URL + '/:path*', // 你的后端地址
+        },
+      ]
+    }
+    return []
+  },
 }
 
 export default nextConfig

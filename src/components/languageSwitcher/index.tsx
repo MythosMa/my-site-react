@@ -41,7 +41,10 @@ export default function LanguageSwitcher({ lng }: { lng: string }) {
 
   return (
     <Dropdown
-      overlayClassName={styles["custom-dropdown"]}
+      classNames={{
+        root: styles["custom-dropdown"],
+        item: styles["custom-dropdown-item"],
+      }}
       menu={{ items: menuItems }}
       getPopupContainer={(node) => node.parentNode as HTMLElement}
     >

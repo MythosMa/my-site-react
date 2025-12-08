@@ -12,6 +12,7 @@ import styles from "./index.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import StarBackground from "@/components/starBackground";
+import { Params } from "@/types/common";
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -27,7 +28,7 @@ export default async function RootLayout({
   params,
 }: Readonly<{
   children: React.ReactNode;
-  params: Record<string, string>;
+  params: Params;
 }>) {
   const { lng } = await params;
   return (

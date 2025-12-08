@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "sass:string";
+
 .container {
   position: absolute;
   width: 100%;
@@ -5,18 +8,18 @@
   background-color: black;
 
   @function getShadows($n) {
-    $result: "#{random(100)}vw #{random(100)}vh 0 #fff";
+    $result: "#{math.random(100)}vw #{math.random(100)}vh 0 #fff";
     @for $i from 2 through $n {
-      $result: "#{$result}, #{random(100)}vw #{random(100)}vh 0 #fff";
+      $result: "#{$result}, #{math.random(100)}vw #{math.random(100)}vh 0 #fff";
     }
-    @return unquote($result);
+    @return string.unquote($result);
   }
 
   $duration: 400s;
   $n: 1000;
   @for $i from 1 through 5 {
-    $duration: $duration / 2;
-    $n: floor($n / 2);
+    $duration: math.div($duration, 2);
+    $n: math.floor(math.div($n, 2));
     .starLayer#{$i} {
       $size: #{$i}px;
       $duration: $duration;
