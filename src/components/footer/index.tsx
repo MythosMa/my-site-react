@@ -9,7 +9,7 @@ const Footer = () => {
     <div className="flex flex-row items-center justify-between w-full h-[10vh]">
       <div className="flex flex-row items-center font-extrabold">
         <Link href="https://github.com/MythosMa" target="_blank">
-          <div className="flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
+          <div className="flex flex-row items-center text-[#686868]  hover:text-[#ffffff] hover:translate-y-[-4px] transition-all duration-300">
             <div className="w-6 h-6">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
                 <path
@@ -22,7 +22,7 @@ const Footer = () => {
           </div>
         </Link>
         <Link href="https://www.cnblogs.com/mythosma-web/" target="_blank">
-          <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
+          <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff] hover:translate-y-[-4px] transition-all duration-300">
             <div className="w-5 h-5">
               <svg
                 version="1.1"
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
         </Link>
         <Link href="https://www.cnblogs.com/mythosma/" target="_blank">
-          <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff]">
+          <div className="ml-8 flex flex-row items-center text-[#686868]  hover:text-[#ffffff] hover:translate-y-[-4px] transition-all duration-300">
             <div className="w-5 h-5">
               <svg
                 version="1.1"
@@ -72,16 +72,16 @@ const Footer = () => {
       </div>
       <div className="flex items-center justify-end ">
         <Link
-          className="text-[#686868]  hover:text-[#ffffff]"
+          className="text-[#686868]  hover:text-[#ffffff] hover:translate-y-[-4px] transition-all duration-300"
           href="https://beian.miit.gov.cn"
           target="_blank"
         >
           备案号：湘ICP备2024058715号-1
         </Link>
-        <div className="ml-4 flex items-center">
+        <div className="ml-4 flex items-center text-[#686868]  hover:text-[#ffffff] hover:translate-y-[-4px] transition-all duration-300">
           <Image src={BeianIcon} alt="beian-icon" width={16} height={16} />
           <Link
-            className="ml-2 text-[#686868]  hover:text-[#ffffff]"
+            className="ml-2"
             href="https://beian.mps.gov.cn/#/query/webSearch?code=43011202001076"
             rel="noreferrer"
             target="_blank"
