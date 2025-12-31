@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
+import "@/assets/styles.scss";
 import { languages } from "@/app/i18n/config";
 import { AntdProviders } from "@/app/providers/antdProvider";
 import { MobxProviders } from "@/app/providers/mobxProvider";

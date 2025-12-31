@@ -1,9 +1,12 @@
 .timeline-container {
     position: relative;
     display: flex;
-    justify-content: center;
-    padding: 40px 10px;
-    margin-top: 20px;
+    flex-direction: column;
+    padding-top: 50px;
+    height: 100%;
+
+    $transformDuration: 0.6s;
+    $animationDuration: 3s;
 
     .line {
         width: 100%;
@@ -13,11 +16,14 @@
 
     .dot-container {
         position: absolute;
-        inset: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
+        z-index: 111;
 
         .dot-wrapper {
             display: flex;
@@ -25,7 +31,6 @@
             align-items: center;
             position: relative;
 
-            $duration: 0.5s;
             .dot {
                 width: 20px;
                 height: 20px;
@@ -33,34 +38,86 @@
                 background-color: #999999;
                 cursor: pointer;
                 transition:
-                    background-color $duration ease,
-                    transform $duration ease,
-                    box-shadow $duration ease;
+                    background-color $transformDuration ease,
+                    transform $transformDuration ease,
+                    box-shadow $transformDuration ease;
+
+                &:hover {
+                    background-color: #ffffff;
+                    transform: scale(1.2);
+                    box-shadow: 0 1px 10px #ffffff;
+                    animation: round $animationDuration linear infinite;
+
+                    + .year {
+                        opacity: 1;
+                        transform: translateY(40px) scale(1) rotate(720deg);
+                    }
+                }
+
+                @keyframes round {
+                    0% {
+                        transform: scale(1);
+                    }
+                    50% {
+                        transform: scale(1.5);
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
             }
 
             .year {
+                pointer-events: none;
                 position: absolute;
                 opacity: 0;
                 transform: translateY(40px) scale(0);
                 transform-origin: 50% calc(50% - 40px);
                 font-size: 14px;
                 color: #ffffff;
+                white-space: nowrap;
                 transition:
-                    transform $duration ease,
-                    scale $duration ease,
-                    opacity $duration ease;
-            }
-
-            &:hover .dot {
-                background-color: #ffffff;
-                transform: scale(1.2);
-                box-shadow: 0 0 10px #ffffff;
-            }
-
-            &:hover .year {
-                opacity: 1;
-                transform: translateY(30px) scale(1) rotate(360deg);
+                    transform $transformDuration ease,
+                    opacity $transformDuration ease;
             }
         }
+    }
+    .info-background {
+        flex: 1;
+        padding-top: 50px;
+        transform: scaleX(0);
+        transition: transform $transformDuration ease;
+        position: relative;
+
+        .info-container {
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            color: white;
+            flex-direction: column;
+            overflow: auto;
+        }
+    }
+
+    .info-word-cloud {
+        position: absolute;
+        inset: 0;
+        padding-top: 100px;
+        transform: scale(1);
+        opacity: 0.8;
+        transition:
+            transform $transformDuration ease,
+            opacity $transformDuration ease;
+    }
+
+    &:has(.dot:hover, .info-background:hover) .info-background {
+        transform: scaleX(1);
+    }
+
+    &:has(.dot:hover, .info-background:hover) .info-word-cloud {
+        transform: scale(0);
+        opacity: 0;
     }
 }
