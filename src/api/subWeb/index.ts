@@ -9,7 +9,7 @@ export type SubWebDto = {
 export const getSubWebApi = async () => {
   return await request<SubWebDto[]>({
     method: "GET",
-    url: "/subWeb",
+    url: "/sub-web",
     errorMessage: "info",
   });
 };

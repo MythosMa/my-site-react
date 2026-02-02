@@ -2,7 +2,7 @@ import { LOCATION_STORAGE_TOKEN } from "@/constant/request";
 import { message, Modal } from "antd";
 import axios, { AxiosRequestConfig } from "axios";
 
-const withoutTokenUrl = ["/login", "/subWeb"];
+const withoutTokenUrl = ["/login", "/sub-web"];
 
 const isWithoutTokenUrl = (url: string) => {
   return !withoutTokenUrl.includes(url);

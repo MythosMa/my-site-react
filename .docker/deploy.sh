@@ -1,9 +1,9 @@
-export BUILD_IMG_TAG=1.3.5
+export BUILD_IMG_TAG=1.3.6
 
 sh .docker/check-docker.sh
 
-npm install
-npm run build
+pnpm install
+pnpm run build
 
 cp .docker/Dockerfile ./
 
