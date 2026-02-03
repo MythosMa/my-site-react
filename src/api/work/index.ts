@@ -13,7 +13,7 @@ export type WorkDTO = {
 export const getWordCloudsApi = async () => {
   return await request<WordCloudDTO[]>({
     method: "GET",
-    url: "/word-cloud",
+    url: "/word-clouds",
     errorMessage: "info",
   });
 };
@@ -30,7 +30,7 @@ export const isWordCloudDto = (data: any): data is WordCloudDTO[] => {
 export const getWorksApi = async () => {
   return await request<WorkDTO[]>({
     method: "GET",
-    url: "/work",
+    url: "/works",
     errorMessage: "info",
   });
 };

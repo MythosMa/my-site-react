@@ -3,7 +3,7 @@
 const nextConfig = {
   output: "standalone",
   async rewrites() {
-    console.log("NEXT_PUBLIC_BASE_URL:", process.env.NEXT_PUBLIC_BASE_URL)
+    console.log("NEXT_PUBLIC_BASE_URL:", process.env.NEXT_PUBLIC_BASE_URL, process.env.NODE_ENV)
     if (process.env.NODE_ENV === 'development') {
       return [
         {
