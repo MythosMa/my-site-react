@@ -13,17 +13,3 @@ export const getSubWebApi = async () => {
     errorMessage: "info",
   });
 };
-
-export const isSubWebDto = (data: any): data is SubWebDto[] => {
-  return (
-    Array.isArray(data) &&
-    data.every(
-      (item) =>
-        item &&
-        typeof item === "object" &&
-        "id" in item &&
-        "name" in item &&
-        "url" in item
-    )
-  );
-};

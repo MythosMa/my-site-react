@@ -105,7 +105,7 @@ export const request = async <T = unknown>(
     successMessage?: "modal" | "info";
     errorMessage?: "modal" | "info";
   }
-) => {
+): Promise<T> => {
   try {
     return await instance.request<unknown, T>(config);
   } catch (error: unknown) {
@@ -118,6 +118,6 @@ export const request = async <T = unknown>(
       });
     }
 
-    return new Error(msg);
+    throw new Error(msg);
   }
 };

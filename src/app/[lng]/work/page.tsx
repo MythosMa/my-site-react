@@ -10,8 +10,8 @@ import { useRequest } from "@/hooks/useRequest";
 import {
   getWordCloudsApi,
   getWorksApi,
-  isWordCloudDto,
-  isWorkDto,
+  WordCloudDTO,
+  WorkDTO,
 } from "@/api/work";
 
 const Work = () => {
@@ -21,7 +21,7 @@ const Work = () => {
     data: wordCloudDatas,
     error: wordCloudError,
     fetchData: fetchWordClouds,
-  } = useRequest(getWordCloudsApi);
+  } = useRequest<WordCloudDTO[]>(getWordCloudsApi, { defaultValue: [] });
 
   useEffect(() => {
     if (!isWordCloudFetch.current) {
@@ -36,7 +36,7 @@ const Work = () => {
     data: workDatas,
     error: workError,
     fetchData: fetchWorks,
-  } = useRequest(getWorksApi);
+  } = useRequest<WorkDTO[]>(getWorksApi, { defaultValue: [] });
 
   useEffect(() => {
     if (!isWorkFetch.current) {
@@ -50,7 +50,6 @@ const Work = () => {
   const renderInfo = () => {
     if (
       hoverInDotIndex === -1 ||
-      !isWorkDto(workDatas) ||
       workDatas.length === 0 ||
       hoverInDotIndex >= workDatas.length
     ) {
@@ -74,13 +73,10 @@ const Work = () => {
     return (
       <div className={styles["info-word-cloud"]}>
         <WordCloud
-          words={
-            isWordCloudDto(wordCloudDatas)
-              ? wordCloudDatas.map((item) => {
-                  return { text: item.text, value: item.value };
-                })
-              : []
-          }
+          words={wordCloudDatas.map((item) => ({
+            text: item.text,
+            value: item.value,
+          }))}
           width={700}
           height={200}
           fill={"white"}
@@ -98,16 +94,15 @@ const Work = () => {
       <div className={styles["timeline-container"]}>
         <div className={styles["line"]}></div>
         <div className={styles["dot-container"]}>
-          {isWorkDto(workDatas) &&
-            workDatas.map((item, index) => (
-              <div key={index} className={styles["dot-wrapper"]}>
-                <div
-                  className={styles["dot"]}
-                  onMouseEnter={() => setHoverInDotIndex(index)}
-                ></div>
-                <span className={styles["year"]}>{item.year}</span>
-              </div>
-            ))}
+          {workDatas.map((item, index) => (
+            <div key={index} className={styles["dot-wrapper"]}>
+              <div
+                className={styles["dot"]}
+                onMouseEnter={() => setHoverInDotIndex(index)}
+              ></div>
+              <span className={styles["year"]}>{item.year}</span>
+            </div>
+          ))}
         </div>
         {renderWordCloud()}
         <div className={styles["info-background"]}>

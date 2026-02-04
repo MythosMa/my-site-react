@@ -1,6 +1,6 @@
 "use client";
 
-import { getSubWebApi, isSubWebDto } from "@/api/subWeb";
+import { getSubWebApi } from "@/api/subWeb";
 import { useTranslation } from "@/app/i18n/client";
 import { useRequest } from "@/hooks/useRequest";
 import { Params } from "@/types/common";
@@ -12,7 +12,9 @@ const Home = ({ params }: { params: Params }) => {
   const { t } = useTranslation(lng, "home");
 
   const isFetch = useRef(false);
-  const { loading, data, error, fetchData } = useRequest(getSubWebApi);
+  const { loading, data, error, fetchData } = useRequest(getSubWebApi, {
+    defaultValue: [],
+  });
 
   useEffect(() => {
     if (!isFetch.current) {
@@ -22,7 +24,7 @@ const Home = ({ params }: { params: Params }) => {
   }, [fetchData]);
 
   const renderSubWeb = () => {
-    return isSubWebDto(data) && data.length ? (
+    return data.length ? (
       data.map((item, index) => (
         <Fragment key={item.id}>
           <Link href={item.url} target="_blank">
